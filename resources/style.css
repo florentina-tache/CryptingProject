@@ -96,17 +96,12 @@ h1{
 
 
 #seeMore{
-    /*position:absolute;*/
-    /*padding: 0;*/
-    /*margin-right: 50px;*/
+
     border: none;
     border-radius: 30px;
     background-color: rgba(127, 255, 212, 0.1);
-    /*text-align: right;*/
     height: 70px;
-    
-  /*  left: 42em;
-    top: 1em;*/
+
 }
 
 .playfair,.bifid{
