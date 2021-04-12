@@ -1,0 +1,97 @@
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <script src="../resources/script.js"></script>
+  <link rel="stylesheet" href="../resources/style.css">
+  <link href='https://fonts.googleapis.com/css?family=Alef' rel='stylesheet'>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <script>
+
+    </script>
+</head>
+
+<body>
+
+  <h1>Encrypt text - two ciphers</h1>
+  <div class="wrapper">
+    <p class="cipher description">The purpose of this project is to encrypt a text using a specific key by two diffent crypting methods and I have chosen Playfair and Bifid Ciphers. Initially, the inputs are initialized with value read from a local file. The user can also choose their input. The output can be seen after pressing the "Encrypt" button, and it can also be converted back to the original text by pressing the "Decrypt" button. </p>
+    <section class="cipher">
+    <h2 class="cipherName">Playfair Cipher</h2>
+    <p class="playfair">The Playfair cipher was the first practical digraph substitution cipher. The scheme was invented in 1854 by Charles Wheatstone but was named after Lord Playfair who promoted the use of the cipher. In playfair cipher unlike traditional cipher we encrypt a pair of alphabets(digraphs) instead of a single alphabet.</p>
+  </section>
+  <button id="seeMore" onclick="displayInfo()"><i id="arrow" class="fa fa-chevron-circle-down fa-2x"></i></button>
+  <section class="cipher">
+    <h2>Bifid Cipher</h2>
+    <p class="bifid">In classical cryptography, the bifid cipher is a cipher which combines the Polybius square with transposition, and uses fractionation to achieve diffusion. It was invented around 1901 by Felix Delastelle.</p>
+  </section>
+  </div>
+
+  <div class="algorithms">
+  
+
+    <hr>
+    <form method="post" class="date"  action="/getinput" enctype="multipart/form-data">
+      <p>
+      <label>
+        Text to be crypted: <br> <input type="text" id="inputText" name="inputText"  value="init" required>
+      </label>
+      </p>
+    
+      <p>
+        <label>
+          Key: <br><input type="text" id="key" name="key" value="init" required>
+        </label>
+        </p>
+    
+        <p>
+          <input type="submit" class="button" value="Encrypt!">
+        </p>
+    </form>
+    
+    
+
+    <p class="encryptedText">First encryption: <span id="cryptedText"></span></p>
+    <p class="encryptedText">Second encryption: <span id="cryptedText2"></span></p>
+    <p>
+      <button type="button" class="button" onclick="decrypt()">Decrypt!</button>
+    </p>
+    <p class="decryptedText">Second decryption: <span id="decryptedText2"></span></p>
+    <p class="decryptedText">First encryption: <span id="decryptedText"></span></p>
+  </div>
+    <script>
+      var word = "<%= word %>";
+        console.log(word);
+    
+      var key = "<%= key %>";
+        console.log(key);
+    
+        document.getElementById("inputText").value = word;
+        document.getElementById("key").value = key;
+
+    
+        var cryptedText = "<%= cryptedText %>";
+        var cryptedText2 = "<%= cryptedText2 %>";
+        var decryptedText2 = "<%= decryptedText2 %>";
+        var decryptedText = "<%= decryptedText %>";
+
+        console.log(cryptedText);
+        console.log(cryptedText2);
+        console.log(decryptedText2);
+        console.log(decryptedText);
+
+        document.getElementById("cryptedText").innerHTML = cryptedText;
+        document.getElementById("cryptedText2").innerHTML = cryptedText2;
+
+        if(document.getElementById("cryptedText").innerHTML == ""){
+          document.getElementsByClassName("encryptedText")[0].style.display = "none";
+          document.getElementsByClassName("encryptedText")[1].style.display = "none";
+          
+        }
+
+    </script>
+
+
+
+</body>
+</html>
