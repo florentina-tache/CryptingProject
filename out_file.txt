@@ -1,0 +1,4 @@
+First encryption: pnvo
+Second encryption: pync
+Second decryption: pnvo
+First decryption: text
